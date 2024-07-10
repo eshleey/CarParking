@@ -1,11 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     [Header("----Car Settings")]
     public GameObject[] Cars;
+    public GameObject StopPoint;
     public int HowManyCars;
     int ActiveCarIndex = 0;
 
@@ -24,6 +23,8 @@ public class GameManager : MonoBehaviour
 
     public void BringNewCar()
     {
+        StopPoint.SetActive(true);
+
         if (ActiveCarIndex < HowManyCars)
         {
             Cars[ActiveCarIndex].SetActive(true);

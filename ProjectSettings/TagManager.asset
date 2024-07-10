@@ -8,6 +8,7 @@ TagManager:
   - Leaf
   - Stop
   - Car
+  - StopPoint
   layers:
   - Default
   - TransparentFX
