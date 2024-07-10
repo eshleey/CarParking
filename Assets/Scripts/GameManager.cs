@@ -6,18 +6,23 @@ public class GameManager : MonoBehaviour
 {
     [Header("----Car Settings")]
     public GameObject[] Cars;
-    public GameObject[] CarCanvasSprites;
-    public Sprite GreenCarSprite;
     public GameObject StopPoint;
     public int HowManyCars;
-    int RemainingCarNumber;
     int ActiveCarIndex = 0;
-    public TextMeshProUGUI RemainingCar;
 
     [Header("----Platform Settings")]
     public GameObject Platform1;
     public GameObject Platform2;
     public float[] RotationSpeeds;
+
+    [Header("----Canvas Settings")]
+    public GameObject[] CarCanvasSprites;
+    public TextMeshProUGUI RemainingCar;
+    public Sprite GreenCarSprite;
+    int RemainingCarNumber;
+
+    [Header("----Level Settings")]
+    public int DiamondCount;
 
     void Start()
     {
