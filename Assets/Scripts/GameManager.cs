@@ -1,12 +1,18 @@
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     [Header("----Car Settings")]
     public GameObject[] Cars;
+    public GameObject[] CarCanvasSprites;
+    public Sprite GreenCarSprite;
     public GameObject StopPoint;
     public int HowManyCars;
+    int RemainingCarNumber;
     int ActiveCarIndex = 0;
+    public TextMeshProUGUI RemainingCar;
 
     [Header("----Platform Settings")]
     public GameObject Platform1;
@@ -15,10 +21,13 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        /*for (int i = 0; i < HowManyCars; i++)
+        /* RemainingCarNumber = HowManyCars;
+        RemainingCar.text = RemainingCarNumber.ToString();
+
+        for (int i = 0; i < HowManyCars; i++)
         {
-            
-        }*/
+            CarCanvasSprites[i].SetActive(true);
+        } */
     }
 
     public void BringNewCar()
@@ -29,6 +38,11 @@ public class GameManager : MonoBehaviour
         {
             Cars[ActiveCarIndex].SetActive(true);
         }
+
+        /* CarCanvasSprites[ActiveCarIndex - 1].GetComponent<Image>().sprite = GreenCarSprite;
+
+        RemainingCarNumber--;
+        RemainingCar.text = RemainingCarNumber.ToString(); */
     }
 
     void Update()
