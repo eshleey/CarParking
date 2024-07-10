@@ -7,6 +7,7 @@ public class Car : MonoBehaviour
     public bool MoveForward;
     public Transform Parent;
     public GameObject[] Ruts;
+    public GameManager GameManager;
 
     void Start()
     {
@@ -29,9 +30,13 @@ public class Car : MonoBehaviour
             Ruts[0].SetActive(false);
             Ruts[1].SetActive(false);
             transform.SetParent(Parent);
+            GameManager.BringNewCar();
         }
-
-        if (collision.gameObject.CompareTag("Middle"))
+        else if (collision.gameObject.CompareTag("Middle"))
+        {
+            Destroy(gameObject);
+        }
+        else if (collision.gameObject.CompareTag("Car"))
         {
             Destroy(gameObject);
         }
